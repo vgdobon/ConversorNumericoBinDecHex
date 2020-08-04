@@ -7,7 +7,7 @@ public class Main {
         String numeroBinario;
         int numeroDecimal;
         String numeroHexadecimal;
-        String masOperaciones="";
+        String masOperaciones;
         Conversion conversion=new Conversion();
         System.out.println("CONVERSOR ENTRE SISTEMA DECIMAL\\BINARIO\\HEXADECIMAL");
         System.out.println("_____________________________________________________");
@@ -18,45 +18,38 @@ public class Main {
             int eleccion = sc.nextInt();
             sc.nextLine();
 
-            switch (eleccion){
-                case 1:
+            switch (eleccion) {
+                case 1 -> {
                     System.out.println("Introduzca un número en binario");
-                    numeroBinario=sc.nextLine();
-                    System.out.println("El numero binario: "+numeroBinario+" en decimal es :"+conversion.binarioADecimal(numeroBinario)+"\n");
-                    break;
-
-                case 2:
+                    numeroBinario = sc.nextLine();
+                    System.out.println("El numero binario: " + numeroBinario + " en decimal es :" + conversion.binarioADecimal(numeroBinario) + "\n");
+                }
+                case 2 -> {
                     System.out.println("Introduzca un número en binario");
-                    numeroBinario=sc.nextLine();
-                    System.out.println("El numero binario: "+numeroBinario+" en hexadecimal es :"+conversion.binarioAHexadecimal(numeroBinario)+"\n");
-                    break;
-
-                case 3:
+                    numeroBinario = sc.nextLine();
+                    System.out.println("El numero binario: " + numeroBinario + " en hexadecimal es :" + conversion.binarioAHexadecimal(numeroBinario) + "\n");
+                }
+                case 3 -> {
                     System.out.println("Introduzca un número en decimal");
-                    numeroDecimal=sc.nextInt();
-                    System.out.println("El numero decimal: "+numeroDecimal+" en binario es :"+conversion.decimalABinario(numeroDecimal)+"\n");
-                    break;
-
-                case 4:
+                    numeroDecimal = sc.nextInt();
+                    System.out.println("El numero decimal: " + numeroDecimal + " en binario es :" + conversion.decimalABinario(numeroDecimal) + "\n");
+                }
+                case 4 -> {
                     System.out.println("Introduzca un número en decimal");
-                    numeroDecimal=sc.nextInt();
-                    System.out.println("El numero decimal: "+numeroDecimal+" en hexadecimal es :"+conversion.decimalAHexadecimal(numeroDecimal)+"\n");
-                    break;
-
-                case 5:
+                    numeroDecimal = sc.nextInt();
+                    System.out.println("El numero decimal: " + numeroDecimal + " en hexadecimal es :" + conversion.decimalAHexadecimal(numeroDecimal) + "\n");
+                }
+                case 5 -> {
                     System.out.println("Introduzca un número en hexadecimal");
-                    numeroHexadecimal=sc.nextLine();
-                    System.out.println("El numero hexadecimal: "+numeroHexadecimal+" en decimal es :"+conversion.hexadecimalADecimal(numeroHexadecimal)+"\n");
-                    break;
-
-                case 6:
+                    numeroHexadecimal = sc.nextLine();
+                    System.out.println("El numero hexadecimal: " + numeroHexadecimal + " en decimal es :" + conversion.hexadecimalADecimal(numeroHexadecimal) + "\n");
+                }
+                case 6 -> {
                     System.out.println("Introduzca un número en hexadecimal");
-                    numeroHexadecimal=sc.nextLine();
-                    System.out.println("El numero hexadecimal: "+numeroHexadecimal+" en binario es :"+conversion.hexadecimalABinario(numeroHexadecimal)+"\n");
-                    break;
-
-                default:
-                    System.out.println("No ha escogido una opcion correcta. Introduzca un numero entre 1 y 6.");
+                    numeroHexadecimal = sc.nextLine();
+                    System.out.println("El numero hexadecimal: " + numeroHexadecimal + " en binario es :" + conversion.hexadecimalABinario(numeroHexadecimal) + "\n");
+                }
+                default -> System.out.println("No ha escogido una opcion correcta. Introduzca un numero entre 1 y 6.");
             }
 
             System.out.println("¿Quieres realizar alguna operación más? [S/n]");

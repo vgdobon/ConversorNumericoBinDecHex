@@ -40,20 +40,20 @@ public class Conversion {
 
     //Opcion 3 Decimal a Binario
     public String decimalABinario(int numeroDecimal){
-        String numeroBinario="";
+        StringBuilder numeroBinario= new StringBuilder();
         boolean seguirOperando=true;
 
         while(seguirOperando){
 
-            numeroBinario=numeroDecimal%2+numeroBinario;
+            numeroBinario.insert(0, numeroDecimal % 2);
             numeroDecimal=numeroDecimal/2;
             if(numeroDecimal<4){
                 if(numeroDecimal>1){
                     int primerNumero=numeroDecimal/2;
                     int segundoNumero=numeroDecimal%2;
-                    numeroBinario=" "+primerNumero+segundoNumero+numeroBinario;
+                    numeroBinario.insert(0, " " + primerNumero + segundoNumero);
                 }else{
-                    numeroBinario=numeroDecimal+numeroBinario;
+                    numeroBinario.insert(0, numeroDecimal);
                 }
 
 
@@ -62,53 +62,52 @@ public class Conversion {
         }
 
 
-        return numeroBinario;
+        return numeroBinario.toString();
     }
 
 
     //Opcion 4 Decimal a Hexadecimal
     public String decimalAHexadecimal(int numeroDecimal){
         boolean seguirOperando=true;
-        String numeroHexadecimal="";
-        int numeroResultante;
+        StringBuilder numeroHexadecimal= new StringBuilder();
 
         while (seguirOperando){
             if(numeroDecimal>15){
                 if(numeroDecimal%16>9){
                     if(numeroDecimal%16==10){
-                        numeroHexadecimal="A"+numeroHexadecimal;
+                        numeroHexadecimal.insert(0, "A");
                     }else if(numeroDecimal%16==11){
-                        numeroHexadecimal="B"+numeroHexadecimal;
+                        numeroHexadecimal.insert(0, "B");
                     }else if(numeroDecimal%16==12){
-                        numeroHexadecimal="C"+numeroHexadecimal;
+                        numeroHexadecimal.insert(0, "C");
                     }else if(numeroDecimal%16==13){
-                        numeroHexadecimal="D"+numeroHexadecimal;
+                        numeroHexadecimal.insert(0, "D");
                     }else if(numeroDecimal%16==14){
-                        numeroHexadecimal="E"+numeroHexadecimal;
+                        numeroHexadecimal.insert(0, "E");
                     }else {
-                        numeroHexadecimal="F"+numeroHexadecimal;
+                        numeroHexadecimal.insert(0, "F");
                     }
                 }else{
                     int numero=numeroDecimal%16;
-                    numeroHexadecimal=numero+numeroHexadecimal;
+                    numeroHexadecimal.insert(0, numero);
                 }
             }else{
                 if(numeroDecimal>9){
                     if(numeroDecimal==10){
-                        numeroHexadecimal="A"+numeroHexadecimal;
+                        numeroHexadecimal.insert(0, "A");
                     }else if(numeroDecimal==11){
-                        numeroHexadecimal="B"+numeroHexadecimal;
+                        numeroHexadecimal.insert(0, "B");
                     }else if(numeroDecimal==12){
-                        numeroHexadecimal="C"+numeroHexadecimal;
+                        numeroHexadecimal.insert(0, "C");
                     }else if(numeroDecimal==13){
-                        numeroHexadecimal="D"+numeroHexadecimal;
+                        numeroHexadecimal.insert(0, "D");
                     }else if(numeroDecimal==14){
-                        numeroHexadecimal="E"+numeroHexadecimal;
+                        numeroHexadecimal.insert(0, "E");
                     }else{
-                        numeroHexadecimal="F"+numeroHexadecimal;
+                        numeroHexadecimal.insert(0, "F");
                     }
                 }else{
-                    numeroHexadecimal=numeroDecimal+numeroHexadecimal;
+                    numeroHexadecimal.insert(0, numeroDecimal);
                 }
                 seguirOperando=false;
             }
@@ -117,7 +116,7 @@ public class Conversion {
 
 
         }
-        return numeroHexadecimal;
+        return numeroHexadecimal.toString();
     }
 
 

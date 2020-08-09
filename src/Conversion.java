@@ -8,14 +8,15 @@ public class Conversion {
 
     //Opcion 1 Binario a Decimal
     public double binarioADecimal(String numeroBinario){
-
+        //Mete el binario como String de forma inversa al array de char
+        // ( Ej: String 001 -> Array char 100)
         conversionArray= new char[numeroBinario.length()];
         for (int i = 0; i < numeroBinario.length(); i++) {
             for (int j = numeroBinario.length()-1-i; j <=numeroBinario.length()-1-i ; j++) {
                 conversionArray[j]=numeroBinario.charAt(i);
             }
         }
-
+        //Sumatorio de los bits activados * potencia(2,elevado al indice
         double sumatorio=0;
         for (int i = 0; i <conversionArray.length; i++) {
             if(conversionArray[i]=='1'){
@@ -29,6 +30,7 @@ public class Conversion {
 
     //Opcion 2 Binario a Hexadecimal
     public String binarioAHexadecimal(String numeroBinario){
+        //Usando los metodos de binarioADecimal y decimalABinario
         double numeroDecimal=binarioADecimal(numeroBinario);
         int numeroDecimalInt=(int)numeroDecimal;
 
@@ -40,13 +42,17 @@ public class Conversion {
 
     //Opcion 3 Decimal a Binario
     public String decimalABinario(int numeroDecimal){
+        //Creamos nuevo StringBuilder para poder usar sus metodos
         StringBuilder numeroBinario= new StringBuilder();
         boolean seguirOperando=true;
 
         while(seguirOperando){
-
+            //Metodo insert(posicion(0-N),dato a introducir)
+            //Guardamos el modulo de 2 del numeroDecimal en el StringBuilder
             numeroBinario.insert(0, numeroDecimal % 2);
+            //Sobrescribimos numeroDecimal con el cociente
             numeroDecimal=numeroDecimal/2;
+            //Si el numero es menor que 4 terminamos la operacion
             if(numeroDecimal<4){
                 if(numeroDecimal>1){
                     int primerNumero=numeroDecimal/2;
